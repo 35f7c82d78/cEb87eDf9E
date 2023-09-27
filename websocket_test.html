@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WebSocket Test</title>
+    <script type="text/javascript">
+        var ws;
+
+        function init() {
+            // Connect to WebSocket
+            ws = new WebSocket("wss://vtsxy65k7e.execute-api.us-east-1.amazonaws.com");
+
+            // Log WebSocket events
+            ws.onopen = function(evt) {
+                console.log("WebSocket is open now.");
+                console.log("Event:", evt);
+            };
+
+            ws.onclose = function(evt) {
+                console.log("WebSocket is closed now.");
+                console.log("Event:", evt);
+                console.log("Code:", evt.code);
+                console.log("Reason:", evt.reason);
+                console.log("Was clean:", evt.wasClean);
+            };
+
+            ws.onmessage = function(evt) {
+                console.log("WebSocket message received:", evt.data);
+                console.log("Event:", evt);
+            };
+
+            ws.onerror = function(evt) {
+                console.log("WebSocket error:", evt);
+                console.log("Event:", evt);
+            };
+        }
+
+        window.addEventListener("load", init, false);
+    </script>
+</head>
+<body>
+    <h1>WebSocket Test</h1>
+</body>
+</html>

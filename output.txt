@@ -1,0 +1,1 @@
+{"errorMessage": "'domainName'", "errorType": "KeyError", "stackTrace": ["  File \"/var/task/lambda_function.py\", line 15, in lambda_handler\n    print(f'WebSocket URL: wss://{event[\"requestContext\"][\"domainName\"]}/{event[\"requestContext\"][\"stage\"]}')\n"]}
